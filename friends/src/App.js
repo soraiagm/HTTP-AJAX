@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from 'axios';
@@ -9,11 +10,12 @@ import Form from './components/Form';
 
 
 class App extends React.Component {
-    // constructor() {
-    //   super();
-          state = { 
+     constructor(props) {
+          super(props);
+          this.state = { 
           friends: []
        };
+     } 
 
     componentDidMount() {
         axios.get('http://localhost:5000/friends')
